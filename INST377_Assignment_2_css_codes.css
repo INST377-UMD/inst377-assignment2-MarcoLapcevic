@@ -1,0 +1,66 @@
+/*CSS codes*/
+body { font-family: Arial, sans-serif; 
+  padding: 20px; 
+}
+
+nav ul { display: flex; 
+  gap: 15px; 
+  list-style-type: none; 
+  padding: 0px; 
+}
+
+nav li { cursor: pointer; 
+  padding: 10px; 
+  border-radius: 5px; 
+  transition: 0.3s; 
+}
+
+nav li:hover { 
+  background-color: #e0e0e0; 
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+  }
+  
+nav a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  
+.button { background-color: #4CAF50; 
+  color: white; 
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 5px; 
+  cursor: pointer; 
+  margin: 5px; 
+  transition: 0.3s; 
+}
+
+.button:hover { 
+  background-color: #45a049; 
+}
+
+.audio-controls { margin-top: 40px; 
+  border-top: 1px solid #ccc; 
+  padding-top: 20px; 
+}
+
+.slider img { margin: 5px; 
+  border-radius: 8px; 
+}
+
+#dogCarousel { display: flex; 
+  overflow-x: auto; 
+}
+
+table, th, td { border-collapse: collapse;
+  width: 20%;
+  margin-top: 10px;
+  border: 2px solid black;
+  padding: 5px;
+  text-align: left;
+  vertical-align: middle;
+}
