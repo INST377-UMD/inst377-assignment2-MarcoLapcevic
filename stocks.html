@@ -1,0 +1,84 @@
+<!--"Stocks Page" HTML Codes-->
+<html>
+<head>
+  <title>Stocks - Class Activities Application</title>
+  <link rel = "stylesheet" href = "INST377_Assignment_2_css_codes.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href = "home.html">Home</a></li>
+      <li><a href = "stocks.html">Stocks</a></li>
+      <li><a href = "dogs.html">Dogs</a></li>
+    </ul>
+  </nav>
+
+  <h2>Stock Lookup</h2>
+  <input type = "text" id = "ticker" placeholder = "Enter Ticker Symbol">
+  <select id = "days">
+    <option value = "30">30 Days</option>
+    <option value = "60">60 Days</option>
+    <option value = "90">90 Days</option>
+  </select>
+  <button class = "button" id = "stockBtn">Get Stock Data</button>
+  <canvas id = "stockChart" width = "600" height = "400"></canvas>
+
+  <h2>Top 5 Reddit Stocks</h2>
+  <table id = "redditStocks">
+    <thead>
+      <tr><th>Ticker</th><th>Comments</th><th>Sentiment</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <div class = "audio-controls">
+    <h3>Audio Commands:</h3>
+    <ul>
+      <li>"Hello"</li>
+      <br>
+      <li>"Change the color to [color of your preference].</li>
+
+      <ul>
+        <li>For example, "change the color to "red"</li>
+      </ul>
+      <br>
+      <li>"Navigate to dogs"</li>
+      <br>
+      <li>"Lookup [ticker acronym of your chosing]. (on Stocks page)</li>
+      
+      <ul>
+        <li>For example, "Lookup "MSFT""</li>
+      </ul>
+      <br>
+      <li>"Load Dog Breed [choose dog breed underneath the section "Dog Breeds"].</li>
+
+      <ul>
+        <li>For example, "Load dog breed "beagle""</li>
+      </ul>
+
+    </ul>
+    <button onclick="toggleAnnyang(true)" class="button">Turn On Audio</button>
+    <button onclick="toggleAnnyang(false)" class="button">Turn Off Audio</button>
+  </div>
+
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src = "https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src = "INST377_Assignment_2_JavaScript_Codes.js"></script>
+
+  <script>
+    if (annyang) {
+      annyang.addCommands({
+        'lookup *stock': stock => {
+          console.log('Heard stock lookup:', stock); 
+          document.getElementById('ticker').value = stock.toUpperCase();
+          document.getElementById('days').value = "30";
+          fetchStockData();
+        }
+      });
+      annyang.start(); 
+    }
+
+    setupStocksPage();
+  </script>
+</body>
+</html>

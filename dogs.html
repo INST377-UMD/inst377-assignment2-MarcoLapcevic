@@ -1,0 +1,69 @@
+<!--"Dogs Page" HTML Codes-->
+<html>
+<head>
+  <title>Dogs - Class Activities Application</title>
+  <link rel = "stylesheet" href = "INST377_Assignment_2_css_codes.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href = "home.html">Home</a></li>
+      <li><a href = "stocks.html">Stocks</a></li>
+      <li><a href = "dogs.html">Dogs</a></li>
+    </ul>
+  </nav>
+
+  <h2>Dog Carousel</h2>
+  <div id = "dogCarousel" class="slider"></div>
+
+  <h2>Dog Breeds</h2>
+  <div id = "breedButtons"></div>
+  <div id = "breedInfo"></div>
+
+  <div class = "audio-controls">
+    <h3>Audio Commands:</h3>
+    <ul>
+      <li>"Hello"</li>
+      <br>
+      <li>"Change the color to [color of your preference].</li>
+
+      <ul>
+        <li>For example, "change the color to "red"</li>
+      </ul>
+      <br>
+      <li>"Navigate to dogs"</li>
+      <br>
+      <li>"Lookup [ticker acronym of your chosing]. (on Stocks page)</li>
+      
+      <ul>
+        <li>For example, "Lookup "MSFT""</li>
+      </ul>
+      <br>
+      <li>"Load Dog Breed [choose dog breed underneath the section "Dog Breeds"].</li>
+
+      <ul>
+        <li>For example, "Load dog breed "beagle""</li>
+      </ul>
+
+    </ul>
+    <button onclick = "toggleAnnyang(true)" class = "button">Turn On Audio</button>
+    <button onclick = "toggleAnnyang(false)" class = "button">Turn Off Audio</button>
+  </div>
+
+  <script src = "https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+  <script src = "INST377_Assignment_2_JavaScript_Codes.js"></script>
+
+  <script>
+    window.addEventListener('load', () => {
+      console.log("Dogs page loaded");
+      setupDogsPage();
+      if (annyang) {
+        console.log("Starting Annyang");
+        annyang.start();
+      }
+    });
+    
+  </script>
+  
+</body>
+</html>
